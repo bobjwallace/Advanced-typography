@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Advanced typesetting with CSS3</title>
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script>
+  $(function()
+  {
+       $("h1").each(function()
+       {
+          var t = $(this).text();
+          var c = "";
+          console.log(t);
+          for (var i = 0; i < t.length; i++) 
+          {
+            console.log(t.charCodeAt(i));
+          }
+       });
+  });
+  </script>
+<link href='http://fonts.googleapis.com/css?family=Trocchi&subset=latin,latin-ext' rel='stylesheet' type='text/css'>  <style>
+     #main
+     {
+          width:900px;
+          margin:0 auto;
+     }
+     h1  
+     {  
+           font-family: 'Trocchi', serif;
+           font-weight:normal;
+           font-size: 100px;
+           line-height:1em;
+           margin-top:10px;
+          -moz-font-feature-settings: "liga=0, dlig=0";
+          -ms-font-feature-settings: "liga" off, "dlig" off;
+          -webkit-font-feature-settings: "liga" off, "dlig" off;
+          -o-font-feature-settings: "liga" off, "dlig";
+          font-feature-settings: "liga" off, "dlig" off;         
+     }
+     .advanced
+     {
+        -moz-font-feature-settings: "liga=1, dlig=1";
+        -ms-font-feature-settings: "liga", "dlig";
+        -webkit-font-feature-settings: "liga", "dlig";
+        -o-font-feature-settings: "liga", "dlig";
+        font-feature-settings: "liga", "dlig";
+     }
+     .advanced1
+     {
+        letter-spacing:0px;
+     }
+  </style>
+</head>
+<body>
+<div id="main">
+<p>advanced options turned off </p>
+	  <h1>fi fain 0123456789</h1>
+<p>advanced options turned on </p>    
+    <h1 class="advanced">fi fain 0123456789</h1>
+<p>advanced options turned on with letter spacing</p>      
+    <h1 class="advanced advanced1">fi fain 0123456789</h1>
+<p>advanced options turned on with span </p>    
+    <h1 class="advanced">f<span>i</span> fain 0123456789</h1>
+<p>advanced options turned on with span and padding </p>    
+    <h1 class="advanced">f<span style="padding:0 10px;">i</span> fain 0123456789</h1>
+</div>
+</body>
+</html>
